@@ -4,45 +4,22 @@
 import * as types from '../types/events';
 
 
-export const addEvent = ({id,type,notes,date}) => ({
+export const addEvent = ({id,type,notes,date,babyId}) => ({
   type: types.EVENT_ADDED,
   payload:{
     id,
     type,
     notes,
-    date
+    date,
+    babyId
   }
 });
 
-export const deleteEvent = (id) => ({
+export const deleteEvent = (id,babyId) => ({
   type: types.EVENT_DELETED,
-  payload:{id}
+  payload:{id,babyId}
 });
 
 
-// estado = {
-//       babies:{
-//         order:[VVV3],
-//         babiesById:{
-//           VVV3:{silvio, orozco}
-//         },
-//         selectedBaby: null
-//       },
-//       event{
-//         byBabiesId:{
-//           VVV3:{
-//             id1:{ notes, type, date},
-//             id2:{ notes, type, date},
-//             id3:{ notes, type, date},
-//           }
-//         },
-//         byBabiesIdOrder:{
-//           id:[id1,id2,id3]
-//         },
-//         byOrder:[],
-//         byId:{
 
-//         }
-//       },
-//   }
 

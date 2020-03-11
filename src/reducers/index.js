@@ -1,22 +1,19 @@
 import { combineReducers } from 'redux';
 
-import trafficLights, * as trafficLightsSelectors from './trafficLights';
-import pmt, * as pmtSelectors from './pmt';
-import pmtToTrafficLights, * as pmtToTrafficLightsSelectors from './pmtToTrafficLights';
-import selectedTrafficLight,* as selectedTrafficLightSelectors from './selectTrafficLight';
+import babies, * as babiesSelectors from './babies';
+import events, * as eventsSelectors from './events';
+
 
 
 const reducer = combineReducers({
-  trafficLights,
-  pmt,
-  pmtToTrafficLights,
-  selectedTrafficLight
+  babies,
+  events
 });
 
 
 export default reducer;
 
-
+//faltan selectors
 export const getTrafficLight = (
   state,
   index,

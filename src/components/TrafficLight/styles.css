@@ -1,0 +1,17 @@
+.traffic-light-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 120px;
+}
+
+.traffic-light-selected {
+
+    background-color: rebeccapurple;
+}
+
+
+.traffic-light {
+    background: black;
+    float: left;
+    padding: 10px;
+}

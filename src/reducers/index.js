@@ -1,3 +1,6 @@
+//Silvio Orozco
+//Reducer de aplicacion
+
 import { combineReducers } from 'redux';
 
 import babies, * as babiesSelectors from './babies';
@@ -10,27 +13,20 @@ const reducer = combineReducers({
   events
 });
 
-
+//Reducer final combinando babies y events
 export default reducer;
 
-//faltan selectors
-export const getTrafficLight = (
-  state,
-  index,
-) => trafficLightsSelectors.getTrafficLight(state.trafficLights, index);
-export const getTrafficLights = state => trafficLightsSelectors.getTrafficLights(
-  state.trafficLights,
-);
+//todos los selectores
+//Selectores de events
+export const getEventIDsByBaby = (state,babyId) => eventsSelectors.getEventIDsByBaby(state.events,babyId);
+export const getEvent = (state,eventId) => eventsSelectors.getEvent(state.events,eventId);
+export const getEventsByBaby = (state,babyId) => eventsSelectors.getEventsByBaby(state.events,babyId);
 
-export const getAgent = (state, id) => pmtSelectors.getAgent(state.pmt, id);
-export const getAgents = state => pmtSelectors.getAgent(state.pmt);
+//Selectores de babies
+export const getBaby = (state,babyId) => babiesSelectors.getBaby(state.babies,babyId);
+export const getBabies = (state) => babiesSelectors.getBabies(state.babies);
+export const getSelectedBaby = (state) => babiesSelectors.getSelectedBaby(state.babies);
 
-export const getAssignedTrafficLight = (
-  state,
-  agentId,
-) => pmtToTrafficLightsSelectors.getAssignedTrafficLight(
-  state.pmtToTrafficLights,
-  agentId,
-);
+//Selector de eventos por bebe seleccionado
+export const getEventsByBabySelected = (state) => eventsSelectors.getEventsByBaby(state.events,state.babies.selectedBaby);
 
-export const getSelectedTrafficLight = state => selectedTrafficLightSelectors.getSelectedTrafficLight(state.selectedTrafficLight);

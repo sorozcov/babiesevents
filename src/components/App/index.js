@@ -8,7 +8,6 @@ import ChangeAllTrafficLights from '../ChangeAllTrafficLights';
 import ExampleForm from '../ExampleForm';
 
 
-
 const store = configureStore();
 
 const App = () => (

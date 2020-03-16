@@ -13,7 +13,7 @@ export const addBaby = ({id,name,lastname}) => ({
   }
 });
 
-export const selectBaby = (id) => ({
+export const selectBaby = ({id}) => ({
   type: types.BABY_SELECTED,
   payload:{id}
 });

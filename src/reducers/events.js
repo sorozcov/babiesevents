@@ -1,3 +1,6 @@
+//Silvio Orozco
+//Reducer de events
+
 import { combineReducers } from 'redux';
 
 import * as types from '../types/events';
@@ -7,12 +10,16 @@ import _ from 'lodash';
 const byBabiesIdOrder = (state = {}, action) => {
   switch (action.type) {
     case types.EVENT_ADDED: {
-      return {...state, [action.payload.babyId] : [...state[action.payload.babyId],action.payload.id]};
+      let events = null;
+      if(state[action.payload.babyId]!==undefined){
+         events = [...state[action.payload.babyId],action.payload.id];
+      }else{
+        events = [action.payload.id];
+      }
+      return {...state, [action.payload.babyId] : events};
     }
     case types.EVENT_DELETED: {
-      return {...state, [action.payload.babyId]: _.remove(...state[action.payload.babyId],function(eId) {
-        return eId == action.payload.id;
-      })}
+      return {...state, [action.payload.babyId]: state[action.payload.babyId].filter(function(eventId){ return eventId !== action.payload.id;})}
     }
     default: {
       return state;
@@ -29,7 +36,7 @@ const byEventsId = (state = {}, action) => {
       };
     }
     case types.EVENT_DELETED: {
-      return _.omit(...state,[action.payload.id]);
+      return _.omit(state,[action.payload.id]);
     }
     default: {
       return state;
@@ -49,9 +56,9 @@ const events = combineReducers({
 export default events;
 
 //Selectores de events
-export const getEventIDsByBaby = (state, babyId) => state.byBabiesIdOrder[id];
+export const getEventIDsByBaby = (state, babyId) => state.byBabiesIdOrder[babyId];
 export const getEvent = (state,eventId) => state.byEventsId[eventId];
-export const getEventsByBaby = (state,babyId) => state.getEventIDsByBaby(state,babyId).map(
+export const getEventsByBaby = (state,babyId) => getEventIDsByBaby(state,babyId).map(
   eventId => getEvent(state,eventId),
 ).filter(event => event != null);
 

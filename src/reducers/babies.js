@@ -1,11 +1,17 @@
-import { combineReducers } from 'redux';
+//Silvio Orozco
+//Reducer de babies
 
+import { combineReducers } from 'redux';
+import {v4} from 'uuid'
 import * as types from '../types/babies';
+
 
 
 const orderBabies = (state = [], action) => {
   switch (action.type) {
     case types.BABY_ADDED: {
+      let id = v4();
+      action.payload.id = id;
       return [...state, action.payload.id];
     }
     default: {

@@ -1,3 +1,5 @@
+//Silvio Orozco
+//Componente select sobre el valor del bebe seleccionado
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -23,6 +25,7 @@ const SelectBaby = ({ babyOptions, selectedBaby ,onSelect}) => (
 );
 
 
+//Se exporta el default con los dispatch y valores necesarios del estado.
 export default connect(
   (state, { index }) => ({
     babyOptions: selectors.getBabies(state),

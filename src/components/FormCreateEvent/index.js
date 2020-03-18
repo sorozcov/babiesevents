@@ -1,3 +1,6 @@
+//Silvio Orozco
+//Form para crear un evento con redux-form
+
 import React from 'react';
 import { connect } from 'react-redux';
 import {reduxForm, Field,reset} from 'redux-form';
@@ -6,12 +9,7 @@ import * as actions from '../../actions/events';
 import * as selectors from '../../reducers';
 
 
-
-
-
-
-
-
+//Render textarea
 const renderTextArea = ({input, meta: { touched, error, warning }}) => (
   <div >
       <label>Notas</label>
@@ -73,6 +71,8 @@ const form = reduxForm({
   enableReinitialize: true
 })(createEventForm);
 
+
+//Exportar deafault con connect y valores iniciales del estado
 export default connect(
   state => ({
       selectedBaby: selectors.getSelectedBaby(state),

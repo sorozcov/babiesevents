@@ -1,8 +1,8 @@
+//Silvio Orozco
+//Componente de pantalla de eventos
+
 import React from 'react';
-
-
 import './styles.css';
-
 import SelectBaby from '../SelectBaby';
 import FormCreateEvent from '../FormCreateEvent';
 import ShowEvents from '../ShowEvents';
@@ -36,20 +36,3 @@ export default () => (
 );
 
 
-// export default connect(
-//   (state, { index }) => ({
-//     // turnedOnLight: COLORS[selectors.getTrafficLight(state, index)],
-//     // isSelected: selectors.getSelectedTrafficLight(state) === index, 
-//   }),
-//   (dispatch, { index }) => ({
-//     // onClick() {
-//     //   dispatch(actions.changeTrafficLight(index));
-      
-//     // },
-//     // onClickSelect() {
-//     //   dispatch(actionsSelect.selectTrafficLight(index));
- 
-      
-//     // },
-//   }),
-// )(events);

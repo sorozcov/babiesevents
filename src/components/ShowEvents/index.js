@@ -1,7 +1,8 @@
+//Silvio Orozco
+//Se exporta la forma de visualizar los eventos en componente
 import React from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
-
 import './styles.css';
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/events';
@@ -58,7 +59,7 @@ const ShowEvents = ({ events ,deleteEvent,selectedBaby}) => (
 
 
 export default connect(
-  (state, { index }) => ({
+  (state) => ({
     events: selectors.getEventsByBabySelected(state),
     selectedBaby: selectors.getSelectedBaby(state)
     

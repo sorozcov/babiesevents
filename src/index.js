@@ -1,10 +1,9 @@
+//Silvio Orozco
+//Render de app en root html
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-// import * as actions from '../src/actions/babies';
-// import * as actionsEvents from '../src/actions/events';
-// import * as selectors from '../src/reducers/index'
-//import { configureStore } from './store/store';
+
 
 ReactDOM.render(
    <App />,
@@ -16,7 +15,10 @@ ReactDOM.render(
 
 
 //Pruebas de Estado y Reducer
-
+// import * as actions from '../src/actions/babies';
+// import * as actionsEvents from '../src/actions/events';
+// import * as selectors from '../src/reducers/index'
+//import { configureStore } from './store/store';
 //let store = configureStore();
 // console.log(store.dispatch(actions.addBaby({id:2,name:"Bebe",lastname:"Bebe"})))
 // console.log(store.dispatch(actions.addBaby({id:1,name:"Silvio",lastname:"Orozco"})))

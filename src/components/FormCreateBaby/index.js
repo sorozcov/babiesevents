@@ -1,3 +1,5 @@
+//Silvio Orozco
+//Form para crear un bebe
 import React from 'react';
 import { connect } from 'react-redux';
 import {reduxForm, Field,reset} from 'redux-form';
@@ -6,6 +8,7 @@ import * as actions from '../../actions/babies';
 import * as selectors from '../../reducers';
 import { withRouter } from "react-router-dom";
 
+//Render inputs
 const required = value => value ? undefined : 'Requerido'
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
   <div style={{fontSize:'30px',paddingBottom:'20px'}}>
@@ -72,6 +75,7 @@ const form = reduxForm({
   (result, dispatch, props) => { console.log("SUCCESS"); props.history.push('/events') }
 })(createBabyForm);
 
+//Se exporta el default que utiliza router y connect.
 export default withRouter(connect(
   state => ({
     numberBabies: selectors.getBabies(state).length,

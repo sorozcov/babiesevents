@@ -1,0 +1,4 @@
+.events {
+    flex-wrap: nowrap;
+    flex-direction: column;
+}

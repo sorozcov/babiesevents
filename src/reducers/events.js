@@ -58,9 +58,14 @@ export default events;
 //Selectores de events
 export const getEventIDsByBaby = (state, babyId) => state.byBabiesIdOrder[babyId];
 export const getEvent = (state,eventId) => state.byEventsId[eventId];
-export const getEventsByBaby = (state,babyId) => getEventIDsByBaby(state,babyId).map(
+export const getEventsByBaby = (state,babyId) => {
+  if(state.byBabiesIdOrder[babyId]===undefined){
+    return [];
+  }
+  return getEventIDsByBaby(state,babyId).map(
   eventId => getEvent(state,eventId),
 ).filter(event => event != null);
+}
 
 // estado = {
 //       babies:{

@@ -5,12 +5,13 @@ import { combineReducers } from 'redux';
 
 import babies, * as babiesSelectors from './babies';
 import events, * as eventsSelectors from './events';
-
+import {reducer as formReducer} from 'redux-form'
 
 
 const reducer = combineReducers({
   babies,
-  events
+  events,
+  form:formReducer
 });
 
 //Reducer final combinando babies y events

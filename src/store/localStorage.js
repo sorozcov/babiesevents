@@ -26,7 +26,7 @@ export const saveState = (state) =>{
 //clear al estado
 export const clearState = () =>{
     try{
-        localStorage.setItem('state',null)
+        localStorage.setItem('state',undefined)
     } catch(error){
         return undefined;
     }

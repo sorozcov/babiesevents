@@ -2,12 +2,12 @@
 //Acciones de events
 
 import * as types from '../types/events';
+import {v4} from 'uuid'
 
-
-export const addEvent = ({id,type,notes,date,babyId}) => ({
+export const addEvent = ({type,notes,date,babyId}) => ({
   type: types.EVENT_ADDED,
   payload:{
-    id,
+    id:v4(),
     type,
     notes,
     date,

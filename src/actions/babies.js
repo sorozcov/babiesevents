@@ -2,12 +2,12 @@
 //Acciones de babies
 
 import * as types from '../types/babies';
+import {v4} from 'uuid'
 
-
-export const addBaby = ({id,name,lastname}) => ({
+export const addBaby = ({name,lastname}) => ({
   type: types.BABY_ADDED,
   payload:{
-    id,
+    id:v4(),
     name,
     lastname
   }
